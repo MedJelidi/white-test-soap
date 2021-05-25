@@ -1,5 +1,6 @@
 package de.tekup.whitetest.endpoint;
 
+import de.tekup.soap.models.whitetest.AllTestsResponse;
 import de.tekup.soap.models.whitetest.StudentRequest;
 import de.tekup.soap.models.whitetest.WhiteTestResponse;
 import de.tekup.whitetest.service.WhiteTestService;
@@ -20,4 +21,11 @@ public class WhiteTestEndPoint {
     public WhiteTestResponse whiteTestRes(@RequestPayload StudentRequest studentRequest) {
         return service.getWhiteTestResponse(studentRequest);
     }
+
+    @PayloadRoot(namespace = nameSpace, localPart = "AllTestsRequest")
+    @ResponsePayload
+    public AllTestsResponse allTestsResponse() {
+        return service.getAllTests();
+    }
+
 }

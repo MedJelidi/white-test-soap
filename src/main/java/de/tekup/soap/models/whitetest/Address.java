@@ -15,17 +15,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Exam complex type.
+ * <p>Java class for Address complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Exam">
+ * &lt;complexType name="Address">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="street" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="city" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="post-code" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,63 +36,90 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Exam", propOrder = {
-    "code",
-    "name"
+@XmlType(name = "Address", propOrder = {
+    "street",
+    "city",
+    "postCode"
 })
-public class Exam {
+public class Address {
 
     @XmlElement(required = true)
-    protected String code;
+    protected String street;
     @XmlElement(required = true)
-    protected String name;
+    protected String city;
+    @XmlElement(name = "post-code", required = true)
+    protected String postCode;
 
     /**
-     * Gets the value of the code property.
+     * Gets the value of the street property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCode() {
-        return code;
+    public String getStreet() {
+        return street;
     }
 
     /**
-     * Sets the value of the code property.
+     * Sets the value of the street property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCode(String value) {
-        this.code = value;
+    public void setStreet(String value) {
+        this.street = value;
     }
 
     /**
-     * Gets the value of the name property.
+     * Gets the value of the city property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getName() {
-        return name;
+    public String getCity() {
+        return city;
     }
 
     /**
-     * Sets the value of the name property.
+     * Sets the value of the city property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setCity(String value) {
+        this.city = value;
+    }
+
+    /**
+     * Gets the value of the postCode property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPostCode() {
+        return postCode;
+    }
+
+    /**
+     * Sets the value of the postCode property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPostCode(String value) {
+        this.postCode = value;
     }
 
 }
